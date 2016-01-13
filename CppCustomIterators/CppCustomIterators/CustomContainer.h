@@ -3,16 +3,22 @@
 
 class CustomContainer
 {
+	class iterator;					// Forward declaration
 public:
 	CustomContainer() = default;
 	~CustomContainer() = default;
+
+	size_t size() const;
+
+	iterator begin();
+	iterator end();
+
 private:
 	int field1 = 1;
 	int field2 = 2;
 	int field3 = 3;
-	size_t size = 3;
+	size_t nSize = 3;
 
-public:
 	class iterator : public std::iterator<std::output_iterator_tag, int>
 	{
 	public:
@@ -26,7 +32,4 @@ public:
 		CustomContainer & Container;
 	};
 
-	iterator begin();
-	iterator end();
 };
-

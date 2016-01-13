@@ -19,8 +19,6 @@ int CustomContainer::iterator::operator*() const
 	default:
 		throw std::out_of_range("Out of Range Exception!");
 	}
-
-
 }
 
 CustomContainer::iterator & CustomContainer::iterator::operator++()
@@ -34,17 +32,21 @@ CustomContainer::iterator & CustomContainer::iterator::operator++(int i)
 	return ++(*this);
 }
 
-bool CustomContainer::iterator::operator!=(const iterator & rhs) const
+//bool CustomContainer::iterator::operator!=(const iterator & rhs) const
+//{
+//	return nIndex != rhs.nIndex;
+//}
+
+size_t CustomContainer::size() const
 {
-	return nIndex != rhs.nIndex;
+	return nSize;
 }
 
 CustomContainer::iterator CustomContainer::begin()
 {
 	return CustomContainer::iterator(*this, 0);
 }
-
 CustomContainer::iterator CustomContainer::end()
 {
-	return CustomContainer::iterator(*this, size);
+	return CustomContainer::iterator(*this, size());
 }

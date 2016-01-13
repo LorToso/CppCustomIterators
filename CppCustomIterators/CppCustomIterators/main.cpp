@@ -7,11 +7,12 @@ int main(int argc, const char* argv[])
 
 	for (auto it = customContainer.begin(); it != customContainer.end(); it++)
 	{
-		printf("1: %d\n", *it);
+		printf("Iterators: %d\n", *it);
 	}
+
 	for (auto i : customContainer)
 	{
-		printf("2: %d\n", i);
+		printf("Ranged-for: %d\n", i);
 	}
 
 	getchar();
